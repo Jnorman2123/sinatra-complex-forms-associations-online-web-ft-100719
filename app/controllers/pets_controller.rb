@@ -13,7 +13,7 @@ class PetsController < ApplicationController
   post '/pets' do
     @pet = Pet.create(name: params[:pet][:name])
     binding.pry
-    if @pet.owner_id == nil
+    if @pet.owner_id != nil
       @owner = Owner.find(params[:pet][:owner_id])
       @pet.owner = @owner
       @owner.pets << @pet
