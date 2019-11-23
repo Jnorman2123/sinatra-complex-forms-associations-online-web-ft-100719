@@ -30,6 +30,6 @@ class OwnersController < ApplicationController
   end
 
   patch '/owners/:id' do
-
+    binding.pry
   end
 end
