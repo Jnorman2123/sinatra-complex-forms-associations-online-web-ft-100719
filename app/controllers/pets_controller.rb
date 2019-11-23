@@ -11,7 +11,6 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do
-    binding.pry
     @pet = Pet.create(name: params[:pet][:name])
     if Owner.find(params[:pet][:owner_id])
       @owner = Owner.find(params[:pet][:owner_id])
